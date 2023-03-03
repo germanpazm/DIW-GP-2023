@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+	<style>
+			body{
+			background-color: beige;
+			}
+</style>
+
+
+
+	<div>
+		<p th:text="'Tu clasificacion es:'+${clasificacionjugador}"></p>
+		<br>
+		<p th:text="'Tu puntuacion es:'+ ${puntuacion}"></p>
+		
+	
+	<div>
+	<table>
+		<h1>Respuestas del Usuario</h1>
+			<ul>
+ 	 			<li th:each="respuesta : ${sessionMessages}" th:text="${respuesta}"></li>
+			</ul>
+			<h1>RespuestasCorrectas</h1>
+			<ul>
+ 	 			<li th:each="respuesta2 : ${respuestas}" th:text="${respuesta2}"></li>
+			</ul>
+				
+		</table>
+			
+	<form th:action="@{/sesionDestruida}"  method="get">
+			<input type="submit" value="Volver a Empezar" />
+	</form>
+	<br>
+		<a th:href="@{/otros}">Clasificación otros usuarios</a>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Spring Boot Session Example</title>
+</head>
+
+<body>
+	
+	<style>
+		body{
+			background-color: beige;
+		}
+		.tabla {
+  border-collapse: collapse; /* fusiona los bordes de las celdas */
+  width: 100%; /* ancho de la tabla al 100% */
+}
+
+.tabla th, .tabla td {
+  text-align: center; /* alinea el texto en el centro de las celdas */
+  padding: 8px; /* espacio entre el contenido y el borde de la celda */
+  border: 1px solid #ddd; /* agrega un borde de 1px a todas las celdas */
+}
+
+.tabla th {
+  background-color: #f2f2f2; /* color de fondo de la fila de encabezado */
+  color: #333; /* color del texto en la fila de encabezado */
+}
+
+		
+
+	</style>
+
+	<div>
+		
+		<table class="tabla">
+			<caption>Tabla de Usuarios</caption>
+			<tr>
+			<th>Nombre usuario</th>
+			<th>Anio</th>
+			<th>Anio</th>
+			<th>Circuito</th>
+			<th>Mundial</th>
+			<th>NombrePiloto</th>
+			<th>Pais</th>
+			<th>Victorias</th>
+
+			</tr>	
+			<tr th:each="usuario: ${Usuarios}">
+			<td th:text="${usuario.nombre}"></td>
+			<td th:text="${usuario.anio}"></td>
+			<td th:text="${usuario.circuito}"></td>
+			<td th:text="${usuario.mundial}"></td>
+			<td th:text="${usuario.nombrepiloto}"></td>
+			<td th:text="${usuario.pais}"></td>
+			<td th:text="${usuario.victorias}"></td>
+
+			
+			<td><a th:href="@{/borrarusuario/{nombre}(nombre=${usuario.nombre})}">Borrar usuario</a></td>
+			</tr>
+				
+		</table>
+		<br>
+		<br>
+		<br>
+		<table class="tabla">
+			<caption>Tabla Clasificaciones</caption>
+			<tr>
+			<th>ID partida</th>
+
+			<th>Fecha</th>
+			<th>Nombre del usuario</th>
+			<th>Clasificacion</th>
+			</tr>	
+			<tr th:each="clasificacion: ${Clasificaciones}">
+			<td th:text="${clasificacion.idPartida}"></td>
+
+			<td th:text="${clasificacion.fecha}"></td>
+			<td th:text="${clasificacion.usuario.nombre}"></td>
+			<td th:text="${clasificacion.clasificacion}"></td>
+			</tr>
+		</table>
+		
+		
+		
+	</div>
+	<div>
+		<form th:action="@{/destroy}" method="post">
+			<input type="submit" value="Comenzar de nuevo" />
+		</form>
+	</div>
+</body>
+</html>

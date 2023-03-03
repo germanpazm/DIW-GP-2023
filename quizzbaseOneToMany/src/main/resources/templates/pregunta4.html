@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+	<style>
+		
+		h4 {
+    		font-size: 20px;
+    		margin-bottom: 10px;
+		}
+		input[type="submit"] {
+   		 	background-color: #C8A2C8;
+   		 	color: white;
+   		 	border: none;
+   		 	padding: 10px 20px;
+   		 	font-size: 16px;
+   			cursor: pointer;
+    		border-radius: 5px;
+    		margin-top: 20px;
+		}
+		
+		input[type="radio"] {
+    		-webkit-appearance: none;
+    		-moz-appearance: none;
+    		appearance: none;
+    		width: 20px;
+    		height: 20px;
+    		border: 2px solid #C8A2C8;
+    		border-radius: 50%;
+    		outline: none;
+    		cursor: pointer;
+    		transition: background-color 0.2s ease-out;
+		}
+
+		input[type="radio"]:checked {
+    		background-color: #C8A2C8;
+		}
+		div img {
+			height: 30vh;
+			width: 50%;
+			padding: 5%;
+		}
+		
+		form{
+			text-align: center;
+			border: 10px solid #C8A2C8 ;
+		}
+
+
+		#idContenedor {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#idContenedor div {
+			width: 100%;
+		}
+		body{
+			background-color: beige;
+		}
+	</style>
+
+	<form th:action="@{/pregunta5}" method="post">
+
+			<h4>¿Cuantos Podios tiene Fernando Alonso en F1</h4>
+
+			<div id="idContenedor">
+
+				<div>
+					<img th:src="@{/img/33.jpg}" />
+					<br>
+					<input type="radio" name="msg" value="33" required>
+					33
+				</div>
+				<div>
+					<img th:src="@{/img/53.jpg}" />
+					<br>
+					<input type="radio" name="msg" value="53" required>
+					53
+				</div>
+				<div>
+					<img th:src="@{/img/88.jpg}" />
+					<br>
+					<input type="radio" name="msg" value="88" required>
+					88
+				</div>
+				<div>
+					<img th:src="@{/img/97.jpg}" />
+					<br>
+					<input type="radio" name="msg" value="97" required>
+					97
+				</div>
+			</div>
+
+			<br>
+			<input type="submit" value="Enviar">
+	</form>
+</body>
+
+</html>

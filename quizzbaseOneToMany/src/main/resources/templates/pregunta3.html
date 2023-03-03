@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+				h4 {
+    		font-size: 20px;
+    		margin-bottom: 10px;
+		}
+		input[type="submit"] {
+   		 	background-color: #C8A2C8;
+   		 	color: white;
+   		 	border: none;
+   		 	padding: 10px 20px;
+   		 	font-size: 16px;
+   			cursor: pointer;
+    		border-radius: 5px;
+    		margin-top: 20px;
+		}
+		
+		input[type="radio"] {
+    		-webkit-appearance: none;
+    		-moz-appearance: none;
+    		appearance: none;
+    		width: 20px;
+    		height: 20px;
+    		border: 2px solid #C8A2C8;
+    		border-radius: 50%;
+    		outline: none;
+    		cursor: pointer;
+    		transition: background-color 0.2s ease-out;
+		}
+
+		input[type="radio"]:checked {
+    		background-color: #C8A2C8;
+		}
+		div img {
+			width: 50%;
+			height: 30vh;
+			padding: 5%;
+		}
+
+		#idContenedor {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#idContenedor {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#idContenedor div {
+			width: 100%;
+		}
+		
+		body{
+			background-color: beige;
+		}
+
+		form{
+			text-align: center;
+			border: 10px solid #C8A2C8 ;
+		}
+	</style>
+
+	<form th:action="@{/pregunta4}" method="post">
+
+			<h4>¿En que circuito tiene más Victorias Max Versstapen?</h4>
+
+
+			<div id="idContenedor">
+				<div>
+					<img th:src="@{/img/RedBull.png}" />
+					<br>
+					<input type="radio" name="msg" value="RedBullRing" required>
+					RedBullRing
+				</div>
+				<div>
+					<img th:src="@{/img/seppang.png}" />
+					<br>
+					<input type="radio" name="msg" value="Sepang" required>
+					Sepang
+				</div>
+				<div>
+					<img th:src="@{/img/interlagos.png}" />
+					<br>
+					<input type="radio" name="msg" value="Interlagos" required>
+					Interlagos
+				</div>
+				<div>
+					<img th:src="@{/img/silverstone.png}" />
+					<br>
+					<input type="radio" name="msg" value="Silverston" required>
+					Silverstone
+				</div>
+			</div>
+
+			<br>
+			<input type="submit" value="Enviar" />
+	</form>
+
+</body>
+</html>

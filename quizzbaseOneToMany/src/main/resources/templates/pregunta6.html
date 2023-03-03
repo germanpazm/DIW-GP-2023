@@ -1,0 +1,104 @@
+<html lang="es" xml:lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+</head>
+
+<body>
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+				h4 {
+    		font-size: 20px;
+    		margin-bottom: 10px;
+		}
+		input[type="submit"] {
+   		 	background-color: #C8A2C8;
+   		 	color: white;
+   		 	border: none;
+   		 	padding: 10px 20px;
+   		 	font-size: 16px;
+   			cursor: pointer;
+    		border-radius: 5px;
+    		margin-top: 20px;
+		}
+		
+		input[type="checkbox"] {
+    		-webkit-appearance: none;
+    		-moz-appearance: none;
+    		appearance: none;
+    		width: 20px;
+    		height: 20px;
+    		border: 2px solid #C8A2C8;
+    		border-radius: 50%;
+    		outline: none;
+    		cursor: pointer;
+    		transition: background-color 0.2s ease-out;
+		}
+
+		input[type="checkbox"]:checked {
+    		background-color: #C8A2C8;
+		}
+		div img {
+			height: 30vh;
+			width: 50%;
+			padding: 5%;
+		}
+
+
+
+		#idContenedor {
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			
+		}
+		body{
+			background-color: beige;
+		}
+
+		form{
+			text-align: center;
+			border: 10px solid #C8A2C8 ;
+		}
+		#idContenedor div {
+			width: 100%;
+		}
+	</style>
+
+	<form th:action="@{/pregunta7}" method="post">
+
+
+			<h4 >
+				¿En que año Fernando Alonso consiguió su primer titulo de F1?
+			</h4>
+
+			<div id="idContenedor">
+
+				<br>
+					<input name="msg" type="checkbox" value="2005">
+					2005
+				</br>
+				<br>
+					<input name="msg" type="checkbox" value="2006">
+					2006
+				</br>
+				<br>
+					<input name="msg" type="checkbox" value="2010">
+					2010
+				</br>
+				<br>
+					<input name="msg" type="checkbox" value="2012">
+					2012
+				</br>
+
+			</div>
+
+			<br>
+			<input type="submit" value="Enviar">
+	</form>
+</body>
+
+</html>
